@@ -8,8 +8,7 @@ class ApplicationController < Sinatra::Base
   end
 
   get "/" do
-    @reviews = Review.all
-    erb :"/reviews/index.html"
+    erb :welcome
   end
 
   not_found do
