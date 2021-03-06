@@ -2,9 +2,9 @@ Restauarant.destroy_all
 
 
 10.times do
-    Restauarant.create(
-    name: Faker::Restaurant.name
-    address: Faker::Address.street_address
+    Restaurant.create(
+        name: Faker::Restaurant.name,
+        address: Faker::Address.street_address
     )
 end
 
