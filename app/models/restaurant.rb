@@ -1,3 +1,3 @@
-class Review < ActiveRecord::Base
+class Restaurant < ActiveRecord::Base
 
 end
