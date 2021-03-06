@@ -12,3 +12,6 @@ gem 'pry'
 gem 'bcrypt'
 gem 'tux'
 
+#generate data
+gem 'faker'
+
