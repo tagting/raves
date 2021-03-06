@@ -8,7 +8,13 @@ class ApplicationController < Sinatra::Base
   end
 
   get "/" do
-    erb :welcome
+    @reviews = Review.all
+    erb :"/reviews/index.html"
+  end
+
+  not_found do
+    flash[:error] = "Whoops! Couldn't find that route"
+    redirect "/reviews"
   end
 
 end
