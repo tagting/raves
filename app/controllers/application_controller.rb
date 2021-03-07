@@ -5,6 +5,9 @@ class ApplicationController < Sinatra::Base
   configure do
     set :public_folder, 'public'
     set :views, 'app/views'
+    enable :sessions
+    set :session_secret, "secret"
+
   end
 
   get "/" do
@@ -12,7 +15,7 @@ class ApplicationController < Sinatra::Base
   end
 
   not_found do
-    flash[:error] = "Whoops! Couldn't find that route"
+    flash[:error] = "Route Not Found"
     redirect "/reviews"
   end
 
