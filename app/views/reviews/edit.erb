@@ -1,0 +1,7 @@
+<form action="/reviews/<%= @review.id%>" method="post">
+    <input type="hidden" name="_method" value="patch">
+    Title: <input type="text" name="title" value="<%= @review.title %>">
+    Content: <textarea name="content" cols="30" rows="10"><%= @review.content %></textarea>
+    Rating (1 to 5): <input type="integer" name="Rating">
+    <input type="submit" value="Edit Review">
+</form>

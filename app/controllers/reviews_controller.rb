@@ -20,9 +20,9 @@ class ReviewsController < ApplicationController
     #user submits a new review
     post '/reviews' do
         @review = Review.new(params)
-        @review.user_id = session[user_id]
+        @review.user_id = session[:user_id]
         @review.save
-        redirect "/reviews/#{review_id}"
+        redirect "/reviews/#{review.id}"
     end
 
     #user request to see the edit form for a review
@@ -47,15 +47,15 @@ class ReviewsController < ApplicationController
         redirect '/reviews'
     end
 
-# private
-#     def get_review
-#         @review = Review.find_by(id:params[:id])
-#     end
+private
+    def get_review
+        @review = Review.find_by(id:params[:id])
+    end
 
-#     def redirect_if_not_authorized
-#          if @review.user != current_user
-#             flash[:error] = "You do not have authorization"
-#             redirect '/reviews'
-#         end
-#      end
+    def redirect_if_not_authorized
+         if @review.user != current_user
+            flash[:error] = "You do not have authorization"
+            redirect '/reviews'
+        end
+     end
 end
