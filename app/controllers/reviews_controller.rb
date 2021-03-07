@@ -56,6 +56,6 @@ private
          if @review.user != current_user
             flash[:error] = "You do not have authorization"
             redirect '/reviews'
-        end
+        end 
      end
 end
