@@ -32,6 +32,17 @@ class ReviewsController < ApplicationController
         erb :"/reviews/edit"
     end
 
+    #user request to see the edit form for a review and error handling
+    # get '/reviews/:id/edit' do
+    #     @review = Review.find_by(id:params[:id])
+    #     if @review.user == current_user
+    #         erb :"/posts/edit"
+    #     else
+    #         flash[:error] = "Access is reserved for author"
+    #         redirect '/reviews'
+    #     end
+    # end
+
     #user submitted the edit form
     patch '/reviews/:id' do
         get_review

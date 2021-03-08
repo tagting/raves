@@ -8,16 +8,21 @@ class ApplicationController < Sinatra::Base
     enable :sessions
     set :session_secret, "secret"
     register Sinatra::Flash 
-
   end
 
+  #general routes
   get "/" do
     erb :welcome
   end
 
-  not_found do
-    flash[:error] = "Route Not Found"
-    redirect "/reviews"
-  end
+  helpers do
+    def current_user
+      @current_user ||= User.find_by_id(session[:user_id])  
+    end
+
+  # check if a user logged in
+    def logged_in?
+      !!session[:user_id]
+    end 
 
 end
