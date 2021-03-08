@@ -15,7 +15,13 @@
   </head>
   <body>
     <div class="wrapper">
-
+        <!-- FLASH starts here -->
+        <% flash.keys.each do |type| %>
+            <div data-alert class="flash <%= type %> alert-box radius">
+                <%= flash[type] %>
+            </div>
+        <% end %>
+        <!-- FLASH ends here -->
         <%= yield %>
 
       <footer class="branding">
