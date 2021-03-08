@@ -1,6 +1,14 @@
+<h1>Post Review</h1>
+<p style = "font-family: didot">
+<a class="button" href="reviews/new">Post a Review</a>  | 
+<a class="button" href="/edit">Edit a Review</a>  | 
+<a class="button" href="/listings">See Restaurants</a> |
+<a class="button" href="/logout">Log Out</a> | 
+</p>
+<br>
 <form action="/reviews" method="post">
     Title: <input type="text" name="title">
     Content: <textarea name="content" cols="30" rows="10"></textarea>
-    Rating (1 to 5): <input type="integer" name="Rating">
+    Rating (1 to 5): <input type="integer" name="rating">
     <input type="submit" value="Create Review">
 </form>

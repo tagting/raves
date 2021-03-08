@@ -1,7 +1,15 @@
+<h1>Edit Page</h1>
+<p style = "font-family: didot">
+<a class="button" href="reviews/new">Post a Review</a>  | 
+<a class="button" href="/edit">Edit a Review</a>  | 
+<a class="button" href="/listings">See Restaurants</a> |
+<a class="button" href="/logout">Log Out</a> | 
+</p>
+<br>
 <form action="/reviews/<%= @review.id%>" method="post">
     <input type="hidden" name="_method" value="patch">
     Title: <input type="text" name="title" value="<%= @review.title %>">
     Content: <textarea name="content" cols="30" rows="10"><%= @review.content %></textarea>
-    Rating (1 to 5): <input type="integer" name="Rating">
-    <input type="submit" value="Edit Review">
+    Rating (1 to 5): <input type="integer" name="Rating" value="<%= @review.rating %>">
+    <input type="submit" value="Commit Changes">
 </form>

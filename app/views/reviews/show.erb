@@ -1,7 +1,15 @@
+<h1>Show Page</h1>
+<p style = "font-family: didot">
+<a class="button" href="reviews/new">Post a Review</a>  | 
+<a class="button" href="/edit">Edit a Review</a>  | 
+<a class="button" href="/listings">See Restaurants</a> |
+<a class="button" href="/logout">Log Out</a> | 
+</p>
+<br>
 Title: <%= @review.title %>
 Content <%= @review.content %>
 <br>
-<a href="/reviews/<%= @review.id %>/edit">Edit Review</a>
+<!--<a href="/reviews/<%= @review.id %>/edit">Edit Review</a> -->
 
 <form action="/reviews/<%= @review.id %>" method="post">
     <input type="hidden" name="_method" value="delete">

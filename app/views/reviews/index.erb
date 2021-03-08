@@ -1,4 +1,11 @@
 <h1>Reviews Page</h1>
+<p style = "font-family: didot">
+<a class="button" href="reviews/new">Post a Review</a>  | 
+<a class="button" href="/edit">Edit a Review</a>  | 
+<a class="button" href="/listings">See Restaurants</a> |
+<a class="button" href="/logout">Log Out</a> | 
+</p>
+<br>
 <% @reviews.each do |review| %>
 <p><a href="/reviews/<%= review.id %>"><%= review.title %></a></p>
 <% end %>

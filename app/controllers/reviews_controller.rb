@@ -22,7 +22,7 @@ class ReviewsController < ApplicationController
         @review = Review.new(params)
         @review.user_id = session[:user_id]
         @review.save
-        redirect "/reviews/#{review.id}"
+        redirect "/reviews/#{@review.id}"
     end
 
     #user request to see the edit form for a review
@@ -54,7 +54,8 @@ class ReviewsController < ApplicationController
     #user wants to delete a review
     delete '/reviews/:id' do
         get_review
-        @post.destroy
+        #redirect_if_not_authorized
+        @review.destroy
         redirect '/reviews'
     end
 
