@@ -15,3 +15,6 @@ gem 'tux'
 #generate data
 gem 'faker'
 
+#flash
+gem 'sinatra-flash'
+
