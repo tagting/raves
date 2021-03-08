@@ -30,7 +30,7 @@ class UsersController < ApplicationController
             # redirect 
             redirect '/reviews'
         else 
-            # flash[]
+            # flash
             flash[:error] = "Invalid login"
             # invalid login
             redirect '/login'

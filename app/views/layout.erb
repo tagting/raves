@@ -14,14 +14,12 @@
     <link rel="stylesheet" href="/stylesheets/main.css" />
   </head>
   <body>
+    <% flash.keys.each do |type| %>
+      <div data-alert class="flash <%= type %> alert-box radius">
+        <%= flash[type] %>
+      </div>
+    <% end %>
     <div class="wrapper">
-        <!-- FLASH starts here -->
-        <% flash.keys.each do |type| %>
-            <div data-alert class="flash <%= type %> alert-box radius">
-                <%= flash[type] %>
-            </div>
-        <% end %>
-        <!-- FLASH ends here -->
         <%= yield %>
 
       <footer class="branding">
